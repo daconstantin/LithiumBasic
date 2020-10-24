@@ -1,0 +1,70 @@
+LithiumBasic is intended to be a way to easy crossplatform developement for 8-bit retro computers, modern PC's and Android! Command set will be minimal for easy
+maintanence. All code should in theory run on every target platform, but real world limitations apply: no 64-bit integers on C64. Some commands will have a fallback
+behavior when used on something that's not supported on the target platform. Language will be somewhat based on QBasic, but won't bothered with completeness or
+compatibility. 
+
+
+INTERPRETER     is easy enough to implement for any target. Even evil languages like JAVA can implement sane features like GOTO if your program is separated 
+                from the execution of the code. Just use a text file, a pointer and an application that interpreters the commands in a text file.
+
+PRE-PROCESSOR   Better to use byte-code for speed. Pre-processor will remove non-functional stuff from the code, turn labels to pointer addresses and
+                convert the commands to 1-byte long byte-code. Support only 8-bit & 32-bit variable lenghts. No need for 64-bits -- C++ target is for
+                non-retro use anyway.
+                
+COMPILER        No need for a compiler. Just use C++ target and compile that if you need binaries, byte-code should be fine for experimenting. 
+
+
+
+
+
+Targets:
+
+C++             Use this target for Linux, Windows, Mac, etc ports.
+
+ANDROID         Andoid JAVA. JAVA sucks, it doesn't even have goto :). Will probably only implement the interpreter part, and wrap that thing with the source
+                to create APK-files. Intepreter 
+                
+C64             
+
+VIC-20
+
+PLUS4           C16, C116 and Plus/4 computers
+
+ZX SPECTRUM
+
+AMSTRAD CPC
+
+
+
+
+
+
+
+
+LithiumBASIC                    C++                     ANDROID JAVA                    C64                            
+
+
+BLOAD                           x                     
+
+BSAVE                           x
+
+CIRCLE                          x
+
+DIM
+
+DO                              do {                    do {
+code                            code }                  code }
+LOOP UNTIL condition            while (condition);       while(condition)
+
+                  
+
+GOTO label                      goto label;             NONE                            GXXXX
+label:                          label:
+
+GOSUB, RETURN                   x
+
+PRINT "this"                    COUT << "this"
+
+LOCATE
+
+
